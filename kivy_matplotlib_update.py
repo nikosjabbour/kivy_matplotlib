@@ -13,7 +13,7 @@ class MyApp(App):
 
     def build(self):
 
-        '''----------------I---nitialization Process----------------------'''
+        '''----------------------Initialization Process----------------------'''
         self.fig, self.ax = plt.subplots()
 
         self.x_data = np.arange(11)
@@ -30,7 +30,7 @@ class MyApp(App):
         self.ax.set_xlim([0,10])
         self.ax.grid()
 
-        self.units = 'Y axis'
+        self.units = 'Y axis' # y-axis label
         self.ax.set_ylabel(self.units, fontsize=10)
 
         self.graph = FigureCanvasKivyAgg(self.fig,)
@@ -42,8 +42,8 @@ class MyApp(App):
         return self.graph
 
     def update_plot_data(self, interval):
-        '''-----------------------Update Plot Data--------------------------'''
 
+        '''-----------------------Update Plot Data--------------------------'''
         self.lines1.set_data(self.x_data, np.random.randint(10, size=(11)))
         self.lines2.set_data(self.x_data, np.random.randint(10, size=(11)))
         self.fig.canvas.draw()
